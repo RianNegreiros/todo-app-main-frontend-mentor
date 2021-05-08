@@ -1,0 +1,146 @@
+@import ".../../../../styles/colors.scss";
+
+.todosUl {
+  position: absolute;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35rem;
+  border-radius: 5px;
+  z-index: 10;
+  background-color: $Very-Dark-Desaturated-Blue;
+
+  .todo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 1rem 2rem;
+    width: 100%;
+    border-bottom: 1px solid $Light-Grayish-Blue;
+
+    button {
+      display: none;
+      height: 1.5rem;
+      width: 1.5rem;
+      border: none;
+      background-image: url(../../assets/images/icon-cross.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    &:hover {
+      button {
+        display: block;
+      }
+    }
+  }
+
+  .check-container {
+    display: flex;
+    align-items: center;
+
+    .todoSpan {
+      color: #fff;
+    }
+  }
+
+  .check {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    border: 1px solid $Light-Grayish-Blue;
+    cursor: pointer;
+
+    &:hover {
+      border: double 1px transparent;
+      border-radius: 50%;
+      background-image: linear-gradient(
+          $Very-Dark-Desaturated-Blue,
+          $Very-Dark-Desaturated-Blue
+        ),
+        radial-gradient(
+          circle at top left,
+          hsl(192, 100%, 67%),
+          hsl(280, 87%, 65%)
+        );
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  .checked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    border: 1px solid $Light-Grayish-Blue;
+    cursor: pointer;
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+    svg {
+      display: block;
+    }
+  }
+
+  .todoSpanChecked {
+    text-decoration: line-through;
+    color: $Very-Dark-Grayish-Blue;
+  }
+
+  .todosFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 35rem;
+    height: 64px;
+    border-radius: 5px;
+    background: $Very-Dark-Desaturated-Blue;
+
+    .itemsLeft {
+      position: absolute;
+      left: 0;
+      color: $Dark-Grayish-Blue;
+      padding: 0 1.5rem;
+    }
+
+    .filters {
+      margin: 0 auto;
+      color: $Dark-Grayish-Blue;
+
+      span {
+        padding: 0 0.5rem;
+
+        &:hover {
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .clearCompleted {
+      position: absolute;
+      right: 0;
+      color: $Dark-Grayish-Blue;
+      padding: 0 1rem;
+
+      &:hover {
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}

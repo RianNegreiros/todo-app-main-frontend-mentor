@@ -1,0 +1,53 @@
+@import ".../../../../styles/colors.scss";
+
+.input-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 17%;
+  width: 35rem;
+  height: 64px;
+  border-radius: 5px;
+  background-color: $Very-Dark-Desaturated-Blue;
+  padding: 0 2rem;
+
+  .check {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    border: 1px solid $Light-Grayish-Blue;
+    cursor: pointer;
+
+    &:hover {
+      border: double 1px transparent;
+      border-radius: 50%;
+      background-image: linear-gradient(
+          $Very-Dark-Desaturated-Blue,
+          $Very-Dark-Desaturated-Blue
+        ),
+        radial-gradient(
+          circle at top left,
+          hsl(192, 100%, 67%),
+          hsl(280, 87%, 65%)
+        );
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+    }
+  }
+
+  form {
+    width: 100%;
+    height: 100%;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    color: #fff;
+  }
+}
