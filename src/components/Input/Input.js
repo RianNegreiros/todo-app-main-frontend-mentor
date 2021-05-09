@@ -22,7 +22,6 @@ const Input = ({ inputText, setInputText, todos, setTodos }) => {
 
   return (
     <div className="input-container">
-      <div className="check"></div>
       <form action="submit" onSubmit={handleSubmit}>
         <input value={inputText} onChange={handleChange} type="text" placeholder="Create a new todo..." id="todoInput" />
       </form>
