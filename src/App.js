@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     handleFilters();
-  }, [todos, status])
+  }, [todos, status]);
 
   const handleFilters = () => {
     switch (status) {
@@ -22,16 +22,14 @@ function App() {
       case "Completed":
         setFiltered(todos.filter((todo) => todo.completed === true));
         break;
-        case "All":
-          setFiltered(todos);
-          break;
+      case "All":
+        setFiltered(todos);
+        break;
       default:
         setFiltered(todos);
         break;
     }
   };
-
-  console.log(todos)
 
   return (
     <>
@@ -42,9 +40,16 @@ function App() {
         todos={todos}
         setTodos={setTodos}
       />
-      <Todos todos={todos} setTodos={setTodos} setStatus={setStatus} filtered={filtered} status={status} />
+      <Todos
+        todos={todos}
+        setTodos={setTodos}
+        setStatus={setStatus}
+        filtered={filtered}
+        setFiltered={setFiltered}
+        status={status}
+      />
       <Footer />
-    </>
+      </>
   );
 }
 
