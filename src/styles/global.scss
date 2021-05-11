@@ -24,3 +24,7 @@ body {
     height: 100vh;
 }
 
+.bodyLight {
+    @extend body;
+    background-color: $Very-Light-Gray;
+}

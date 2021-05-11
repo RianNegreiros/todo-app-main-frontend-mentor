@@ -48,6 +48,11 @@
     .todoSpan {
       color: #fff;
     }
+
+    .todoSpanLight {
+      @extend .todoSpan;
+      color: $Very-Dark-Blue;
+    }
   }
 
   .check {
@@ -122,6 +127,12 @@
       margin: 0 auto;
       color: $Dark-Grayish-Blue;
 
+      .filterAll.activedFilter,
+      .filterActive.activedFilter,
+      .filterCompleted.activedFilter {
+        color: $Bright-Blue;
+      }
+
       span {
         padding: 0 0.5rem;
 
@@ -141,6 +152,29 @@
       &:hover {
         color: #fff;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+.todosUl-light {
+  @extend .todosUl;
+  background-color: $Very-Light-Gray;
+
+  .todo-container {
+    @extend .todo-container;
+    background-color: $Very-Light-Gray;
+  }
+  .todosFooter {
+    background-color: $Very-Light-Gray;
+
+    .clearCompleted:hover {
+      color: $Very-Dark-Blue;
+    }
+
+    .filters {
+      span:hover {
+        color: $Very-Dark-Blue;
       }
     }
   }

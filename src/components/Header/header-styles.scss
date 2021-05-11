@@ -38,3 +38,13 @@
     cursor: pointer;
   }
 }
+
+
+.headerLight {
+  @extend .header;
+  background-image: url(../../assets/images/bg-desktop-light.jpg);
+
+  .themeToggle {
+      background-image: url(../../assets/images/icon-moon.svg)
+  }
+}

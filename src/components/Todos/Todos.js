@@ -3,25 +3,26 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import "./todos-styles.scss";
 
 const Todos = ({ todos, setTodos, setStatus, filtered, setFiltered }) => {
+
   const handleCheck = (id) => {
     document
-      .getElementById(id)
-      .children[0].firstElementChild.classList.toggle("checked");
-    document
-      .getElementById(id)
-      .children[0].lastElementChild.classList.toggle("todoSpanChecked");
+    .getElementById(id)
+    .firstElementChild.classList.toggle("checked");
+  document
+    .getElementById(id)
+    .lastElementChild.classList.toggle("todoSpanChecked");
 
-    setTodos(
-      todos.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed,
-          };
-        }
-        return todo;
-      })
-    );
+  setTodos(
+    todos.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      }
+      return todo;
+    })
+  );
   };
 
   const handleDelete = (id) => {
@@ -34,38 +35,34 @@ const Todos = ({ todos, setTodos, setStatus, filtered, setFiltered }) => {
   };
 
   const handleOnDragEnd = (result) => {
-    if (!result.destination) return 
-      const items = Array.from(filtered)
-      const [reorderedItem] = items.splice(result.source.index, 1)
-      items.splice(result.destination.index, 0, reorderedItem)
-      
-      setFiltered(items)
-  }
+    if (!result.destination) return;
+    const items = Array.from(filtered);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setFiltered(items);
+  };
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <Droppable droppableId="todos">
         {(provided) => (
           <ul
-          className="todosUl"
-          {...provided.droppableProps}
-          ref={provided.innerRef}
+            className="todosUl"
+            {...provided.droppableProps}
+            ref={provided.innerRef}
           >
             {filtered.map((todo, index) => {
               return (
-                <Draggable
-                key={todo.id}
-                  draggableId={todo.text}
-                  index={index}
-                >
+                <Draggable key={todo.id} draggableId={todo.text} index={index}>
                   {(provided) => (
                     <div
-                    ref={provided.innerRef}
-                    {...provided.draggableProps}
-                    {...provided.dragHandleProps}
-                    className="todo-container"
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      className="todo-container"
                     >
-                      <div className="check-container">
+                      <div className="check-container" id={todo.id}>
                         <div
                           className="check"
                           onClick={() => {
@@ -99,9 +96,9 @@ const Todos = ({ todos, setTodos, setStatus, filtered, setFiltered }) => {
             <div className="todosFooter">
               <span className="itemsLeft">{todos.length} items left</span>
               <div className="filters">
-                <span onClick={() => handleStatus("All")}>All</span>
-                <span onClick={() => handleStatus("Active")}>Active</span>
-                <span onClick={() => handleStatus("Completed")}>Completed</span>
+                <span onClick={() => handleStatus("All")} className="filterAll">All</span>
+                <span onClick={() => handleStatus("Active")} className="filterActive">Active</span>
+                <span onClick={() => handleStatus("Completed")} className="filterCompleted">Completed</span>
               </div>
               <span className="clearCompleted" onClick={() => setTodos([])}>
                 Clear Completed
