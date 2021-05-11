@@ -104,6 +104,12 @@ const Todos = ({ todos, setTodos, setStatus, filtered, setFiltered }) => {
                 Clear Completed
               </span>
             </div>
+
+            <div className="filtersMobile">
+                <span onClick={() => handleStatus("All")} className="filterAllMobile">All</span>
+                <span onClick={() => handleStatus("Active")} className="filterActiveMobile">Active</span>
+                <span onClick={() => handleStatus("Completed")} className="filterCompletedMobile">Completed</span>
+              </div>
           </ul>
         )}
       </Droppable>

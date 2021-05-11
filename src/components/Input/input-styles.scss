@@ -60,3 +60,9 @@
     color: $Very-Dark-Blue;
   }
 }
+
+@media (max-width: 375px) {
+  .input-container {
+    width: 350px;
+  }
+}

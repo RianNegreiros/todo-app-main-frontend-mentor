@@ -11,6 +11,7 @@ const Header = () => {
       document.querySelector('header').classList.toggle('headerLight')
       document.querySelector('.themeToggle').classList.toggle('themeToggleLight')
       document.querySelector('.todosUl').classList.toggle('todosUl-light')
+      document.querySelector('.filtersMobile').classList.toggle('filtersMobileLight')
       document.querySelector('.input-container').classList.toggle('input-containerLight')
     } else {
       document.querySelector('body').classList.toggle('bodyLight')
