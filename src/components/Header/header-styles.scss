@@ -38,3 +38,31 @@
     cursor: pointer;
   }
 }
+
+.headerLight {
+  @extend .header;
+  background-image: url(../../assets/images/bg-desktop-light.jpg);
+
+  .themeToggle {
+      background-image: url(../../assets/images/icon-moon.svg)
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    width: 100vw;
+    background-image: url(../../assets/images/bg-mobile-dark.jpg);
+    background-position: center;
+
+    .title-theme-container {
+      display: flex;
+      justify-content: space-between;
+      width: 350px;
+      margin-bottom: 5rem;
+    }
+  }
+
+  .headerLight {
+    background-image: url(../../assets/images/bg-mobile-light.jpg);
+  }
+}

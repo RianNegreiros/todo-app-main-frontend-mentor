@@ -10,6 +10,7 @@
   border-radius: 5px;
   z-index: 10;
   background-color: $Very-Dark-Desaturated-Blue;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   .todo-container {
     display: flex;
@@ -47,6 +48,11 @@
 
     .todoSpan {
       color: #fff;
+    }
+
+    .todoSpanLight {
+      @extend .todoSpan;
+      color: $Very-Dark-Blue;
     }
   }
 
@@ -122,6 +128,12 @@
       margin: 0 auto;
       color: $Dark-Grayish-Blue;
 
+      .filterAll.activedFilter,
+      .filterActive.activedFilter,
+      .filterCompleted.activedFilter {
+        color: $Bright-Blue;
+      }
+
       span {
         padding: 0 0.5rem;
 
@@ -141,6 +153,76 @@
       &:hover {
         color: #fff;
         cursor: pointer;
+      }
+    }
+  }
+
+  .filtersMobile {
+    display: none;
+    position: relative;
+    width: 350px;
+    height: 64px;
+    border-radius: 5px;
+    background-color: $Very-Dark-Desaturated-Blue;
+    margin: 0 auto;
+
+  }
+
+  .filtersMobileLight {
+    background-color: $Very-Light-Gray;
+  }
+}
+
+.todosUl-light {
+  @extend .todosUl;
+  background-color: $Very-Light-Gray;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  .todo-container {
+    @extend .todo-container;
+    background-color: $Very-Light-Gray;
+  }
+  .todosFooter {
+    background-color: $Very-Light-Gray;
+
+    .clearCompleted:hover {
+      color: $Very-Dark-Blue;
+    }
+
+    .filters {
+      span:hover {
+        color: $Very-Dark-Blue;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .todosUl {
+    width: 350px;
+
+    .todosFooter {
+      width: 350px;
+
+      .filters {
+        display: none;
+      }
+    }
+
+    .filtersMobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .filterAllMobile.activedFilter,
+      .filterActiveMobile.activedFilter,
+      .filterCompletedMobile.activedFilter {
+        color: $Bright-Blue;
+      }
+
+      span {
+        padding: 0 0.5rem;
+        color: $Dark-Grayish-Blue;
       }
     }
   }
