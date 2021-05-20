@@ -20,6 +20,10 @@ const Input = ({ inputText, setInputText, todos, setTodos }) => {
     setInputText("");
   };
 
+  const handleFocus = (e) => {
+    e.target.readOnly = false
+  }
+
   return (
     <div className="input-container">
       <form action="submit" onSubmit={handleSubmit}>
@@ -28,6 +32,8 @@ const Input = ({ inputText, setInputText, todos, setTodos }) => {
           onChange={handleChange}
           type="text"
           placeholder="Create a new todo..."
+          readOnly
+          onFocus={handleFocus}
           id="todoInput"
           className="input"
         />
