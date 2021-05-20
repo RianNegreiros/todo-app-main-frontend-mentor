@@ -34,6 +34,7 @@ const Input = ({ inputText, setInputText, todos, setTodos }) => {
           placeholder="Create a new todo..."
           readOnly
           onFocus={handleFocus}
+          minLength="4"
           id="todoInput"
           className="input"
         />
