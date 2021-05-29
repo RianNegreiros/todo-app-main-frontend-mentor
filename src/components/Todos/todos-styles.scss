@@ -6,7 +6,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 35rem;
+  max-width: 35rem;
+  width: 100%;
   border-radius: 5px;
   z-index: 10;
   background-color: $Very-Dark-Desaturated-Blue;
@@ -111,8 +112,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     position: relative;
-    width: 35rem;
+    max-width: 35rem;
+    width: 100%;
     height: 64px;
     border-radius: 5px;
     background: $Very-Dark-Desaturated-Blue;
@@ -197,7 +200,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   .todosUl {
     width: 350px;
 
