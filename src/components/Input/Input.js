@@ -9,16 +9,19 @@ const Input = ({ inputText, setInputText, todos, setTodos }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setTodos([
-      ...todos,
-      {
-        text: inputText,
-        completed: false,
-        id: Math.random() * 1000,
-      },
-    ]);
-    setInputText("");
-  };
+    if (inputText.length >= 4) {
+      setTodos([
+        ...todos,
+        {
+          text: inputText,
+          completed: false,
+          id: Math.random() * 1000,
+        },
+      ]);
+      setInputText("");
+    };
+    }
+
 
   const handleFocus = (e) => {
     e.target.readOnly = false
