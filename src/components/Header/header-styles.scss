@@ -8,7 +8,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  max-width: 100vw;
+  width: 100%;
   height: 300px;
   background-image: url(../../assets//images/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
@@ -17,7 +18,8 @@
   .title-theme-container {
     display: flex;
     justify-content: space-between;
-    width: 35rem;
+    max-width: 35rem;
+    width: 100%;
     margin-bottom: 5rem;
 
     h1 {
@@ -48,16 +50,18 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   .header {
-    width: 100vw;
+    max-width: 100vw;
+    width: 100%;
     background-image: url(../../assets/images/bg-mobile-dark.jpg);
     background-position: center;
 
     .title-theme-container {
       display: flex;
       justify-content: space-between;
-      width: 350px;
+      max-width: 350px;
+      width: 100%;
       margin-bottom: 5rem;
     }
   }
