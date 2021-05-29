@@ -12,6 +12,7 @@ function App() {
 
   useEffect(() => {
     handleFilters();
+    // eslint-disable-next-line
   }, [todos, status]);
 
   const handleFilters = () => {

@@ -54,7 +54,7 @@ const Todos = ({ todos, setTodos, setStatus, filtered, setFiltered }) => {
           >
             {filtered.map((todo, index) => {
               return (
-                <Draggable key={todo.id} draggableId={todo.text} index={index}>
+                <Draggable key={todo.id} draggableId={todo.id.toString()} index={index}>
                   {(provided) => (
                     <div
                       ref={provided.innerRef}
